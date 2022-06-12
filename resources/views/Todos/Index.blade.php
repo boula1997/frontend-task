@@ -34,7 +34,7 @@
             <tr>
                 <td>#{{$loop->iteration}}</td>
                 <td>{{$todo->task}}</td>
-                <td>{{$todo->completed==0?"Incomplete":"Complete"}}</td>
+                <td>{{$todo->completed==0 ? "Incomplete" : "Complete"}}</td>
                 <td>{{$todo->due}}</td>
                 <td>{{$todo->created_at}}</td>
                 <td>

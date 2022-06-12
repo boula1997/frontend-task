@@ -83,7 +83,7 @@ class TodoController extends Controller
             'task' => 'required',
             'due' => 'required'
         ]);
-        // dd($request->all());
+        //  dd($request->all());
         $todo->update($request->all());
 
         return redirect()->route('todos.index')
