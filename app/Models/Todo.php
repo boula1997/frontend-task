@@ -17,7 +17,7 @@ class Todo extends Model
 
     protected $fillable = [
         'task',
-        'staus',
+        'status',
         'due'
     ];
 }

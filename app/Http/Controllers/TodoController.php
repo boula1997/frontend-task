@@ -38,11 +38,11 @@ class TodoController extends Controller
     public function store(Request $request)
     { 
         // dd($request->all());
-        $request->validate([
-            'task' => 'required',
-            'staus' => 'required',
-            'due' => 'required'
-        ]);
+        // $request->validate([
+        //     'task' => 'required',
+        //     'staus' => 'required',
+        //     'due' => 'required'
+        // ]);
 
         Todo::create($request->all());
 
@@ -80,11 +80,12 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        $request->validate([
-            'task' => 'required',
-            'staus' => 'required',
-            'due' => 'required'
-        ]);
+        // $request->validate([
+        //     'task' => 'required',
+        //     'staus' => 'required',
+        //     'due' => 'required'
+        // ]);
+        // dd($request->all());
         $todo->update($request->all());
 
         return redirect()->route('todos.index')
