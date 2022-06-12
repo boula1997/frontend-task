@@ -12,10 +12,11 @@
             </div>
         </div>
     </div>
+    
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p></p>
+            <p>{{$message}}</p>
         </div>
     @endif
 
@@ -29,10 +30,11 @@
             <th>Actions</th>
         </tr>
         @foreach ($todos as $todo)
+        @if (Auth::user()->id==$todo->user_id)
             <tr>
                 <td>#{{$loop->iteration}}</td>
                 <td>{{$todo->task}}</td>
-                <td>{{$todo->status}}</td>
+                <td>{{$todo->completed==0?"Incomplete":"Complete"}}</td>
                 <td>{{$todo->due}}</td>
                 <td>{{$todo->created_at}}</td>
                 <td>
@@ -55,6 +57,7 @@
                     </form>
                 </td>
             </tr>
+            @endif
         @endforeach
     </table>
 

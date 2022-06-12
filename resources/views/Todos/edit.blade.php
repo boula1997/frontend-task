@@ -17,7 +17,7 @@
             <strong>Error!</strong>
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                    <li>{{$error}}</li>
                 @endforeach
             </ul>
         </div>
@@ -37,12 +37,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Status</strong>
-                        <select class="form-control" name="status" id="todo">
-                            <option value="{{old('status', $todo->status)}}">{{old('status', $todo->status)}}</option>
-                            @if ($todo->status=="Incomplete")
-                            <option value="Complete">Complete</option>  
+                        <select class="form-control" name="completed" id="todo">
+                            @if ($todo->completed=="0")
+                            <option value="0">Incomplete</option> 
+                            <option value="1">Complete</option> 
                             @else
-                            <option value="Incomplete">Incomplete</option> 
+                            <option value="1">Complete</option>
+                            <option value="0">Incomplete</option>  
                             @endif
                         </select>
                 </div>

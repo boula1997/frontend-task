@@ -17,12 +17,12 @@
             <strong>Error!</strong> 
             <ul>
                 @foreach ($errors->all() as $error)
-                    <li></li>
+                    <li>{{$error}}</li>
                 @endforeach
             </ul>
         </div>
     @endif
-    <form action="{{route('todos.store')}}" method="POST" >
+    <form action="{{route('todos.store',['user_id'=>Auth::user()->id])}}" method="POST" >
         @csrf
 
         <div class="row">
