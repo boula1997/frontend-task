@@ -23,7 +23,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Status:</strong>
-                <p style="display: inline">{{$todo->status}}</p>
+                <p style="display: inline">{{$todo->completed==0?"Incomplete":"Complete"}}</p>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

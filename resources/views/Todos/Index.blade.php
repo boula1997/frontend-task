@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>My Dashboard </h2>
+                <h2>Todo List </h2>
             </div>
             <div class="pull-right">
                 <a class="btn btn-success" href="{{route('todos.create')}}" title="Create a todo"> <i class="fas fa-plus-circle"></i>
@@ -61,6 +61,6 @@
         @endforeach
     </table>
 
-    {!! $todos->links() !!}
+   
 
 @endsection
